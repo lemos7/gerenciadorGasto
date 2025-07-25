@@ -154,7 +154,3 @@ $ cd frontend && npm test
 - Filtragem avançada (por intervalo de datas, tags)
 - Exportação de relatórios em PDF/CSV
 - Migração opcional para SQLite ou Postgres
-
-## Licença
-
-Distribuído sob a licença MIT. 
