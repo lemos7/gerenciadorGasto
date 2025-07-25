@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gerenciador de Gastos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body><div class="container py-4 border rounded">
+  <h1 class="mb-3">Gerenciador de Gastos</h1>
+
+  <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+    <label class="m-0">Ano:</label>
+    <select id="year-select" class="form-select w-auto"></select>
+
+    <div id="months-container" class="d-flex gap-1 flex-wrap"></div>
+  </div>
+
+  <form id="form-gasto" class="row g-2 mb-3">
+    <div class="col-2 col-md-1">
+      <input type="number" id="dia" class="form-control" placeholder="Dia" min="1" max="31" required />
+    </div>
+    <div class="col-4 col-md-3">
+      <select id="categoria" class="form-select" required>
+      <option value="Transporte">Transporte</option>
+      <option value="Alimentação">Alimentação</option>
+      <option value="Contas Fixas">Contas Fixas</option>
+      <option value="Lazer">Lazer</option>
+      <option value="Viagem/Hobby">Viagem/Hobby</option>
+      <option value="Investimentos">Investimentos</option>
+      <option value="Reserva de Emergência">Reserva de Emergência</option>
+      </select>
+    </div>
+    <div class="col-3 col-md-2">
+      <input type="number" id="valor" class="form-control" step="0.01" placeholder="Valor" required />
+    </div>
+    <div class="col-3 col-md-2">
+      <button type="submit" class="btn btn-primary w-100">Adicionar</button>
+    </div>
+    <div class="col-12">
+      <textarea id="descricao" class="form-control" rows="2" placeholder="Descrição" required></textarea>
+    </div>
+  </form>
+
+  <table id="tabela-gastos" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Descrição</th>
+        <th>Categoria</th>
+        <th>Valor</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="row g-4 charts">
+    <div class="chart-box col-12 col-md-6">
+      <canvas id="grafico-categorias"></canvas>
+    </div>
+    <div class="chart-box col-12 col-md-6">
+      <div id="total-gastos" class="display-6 fw-bold w-100 text-center"></div>
+    </div>
+  </div>
+</div></body>
+</html> 
